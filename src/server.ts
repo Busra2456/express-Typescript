@@ -1,13 +1,21 @@
-import app from "./app"
+import app from "./app";
 import config from "./config/index"
-import { initDB } from "./db/index"
+import { initDB } from "./db/index";
 
-const main=() =>{
-      initDB()
-      app.listen(config.port, () => {
-  console.log(`Example app listening on port ${config.port}`)
-})
+
+const main= async() =>{
+     await initDB();
+     if (process.env.NODE_ENV !== 'production') {
+    app.listen(config.port, () => {
+      console.log(`Example app listening on port ${config.port}`);
+    });
+  }
+ 
+//      app.listen(config.port, () => {
+//   console.log(`Example app listening on port ${config.port}`)
+// })
 
 
 }
 main()
+export default app;

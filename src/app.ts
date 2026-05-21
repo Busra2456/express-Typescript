@@ -66,3 +66,11 @@ app.use("/api/auth",authRoute);
 app.use(globalErrorHandler);
 
 export default app;
+
+               //deploy korar niyom
+
+ //package.json ar modde"scripts": {"build":"tsc"}add korte hobe
+ //npm run build              
+//npm i -g vercel
+//vercel login
+//vercel --prod
